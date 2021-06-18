@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Task;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route for task behavior
+Route::get('/', [TasksController::class, 'index'])->name('index');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::post('/tasks', [TasksController::class, 'create'])->name('add-task');
+
+Route::delete('/tasks/{task}', [TasksController::class, 'delete'])->name('del-task');
+
+//Route for language changing
+Route::group(['middleware' => 'locale'], function () {
+    Route::get('lang/{language}', [HomeController::class, 'changeLanguage'])
+        ->name('user-lang');
 });
