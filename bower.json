@@ -1,0 +1,22 @@
+{
+  "name": "bowerLarProject",
+  "description": "Manage dependencies for project",
+  "main": "",
+  "authors": [
+    "phatntt1999 <phatntt1999@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/phatntt1999/laravel-quicktask",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "bootstrap": "boostrap#^5.0.1"
+  }
+}
